@@ -7,5 +7,9 @@ use Illuminate\Database\Eloquent\Model;
 
 class products_offer extends Model
 {
-    use HasFactory;
+        
+    public function offers()
+    {
+        return $this->hasOne(offers::class);
+    }
 }

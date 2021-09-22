@@ -8,9 +8,9 @@ use Illuminate\Database\Eloquent\Model;
 class category extends Model
 {
     
-    public function ()
+    public function products()
     {
-        return $this->hasMany(::class);
+        return $this->hasMany(products::class);
     }
 
 }

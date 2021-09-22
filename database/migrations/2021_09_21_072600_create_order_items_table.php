@@ -21,6 +21,11 @@ class CreateOrderItemsTable extends Migration
             $table->integer(quantity);
             $table->integer(precio_total_cantidad);
             $table->timestamps();
+
+            $table->foreign('orders_id')->references('id')->on('orders');
+            $table->foreign('product_id')->references('id')->on('products');
+
+
         });
     }
 

@@ -22,6 +22,9 @@ class CreateOrdersTable extends Migration
             $table->char(status);
             $table->integer(total);
             $table->timestamps();
+
+            $table->foreign('id_user')->references('id')->on('users');
+
         });
     }
 

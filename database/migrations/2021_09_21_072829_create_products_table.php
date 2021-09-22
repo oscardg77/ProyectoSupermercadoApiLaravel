@@ -24,6 +24,9 @@ class CreateProductsTable extends Migration
             $table->integer(id_category);
             $table->integer(stock);
             $table->timestamps();
+
+            $table->foreign('id_category')->references('id')->on('category');
+
         });
     }
 
