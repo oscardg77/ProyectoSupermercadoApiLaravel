@@ -15,14 +15,22 @@ class CreateUsersTable extends Migration
     {
         Schema::create('users', function (Blueprint $table) {
             $table->id();
+            $table->char('rol');
             $table->string('name');
+            $table->char('lastname');
+            $table->char('address');
             $table->string('email')->unique();
             $table->timestamp('email_verified_at')->nullable();
             $table->string('password');
+            $table->integer('telephone');
             $table->rememberToken();
             $table->timestamps();
         });
     }
+       
+
+
+
 
     /**
      * Reverse the migrations.

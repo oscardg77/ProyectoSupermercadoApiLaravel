@@ -13,7 +13,7 @@ class CreateOrderItemsTable extends Migration
      */
     public function up()
     {
-        Schema::create('order_items', function (Blueprint $table) {
+        Schema::create('order_products', function (Blueprint $table) {
             $table->id();
             $table->integer(order_id);
             $table->integer(product_id);
@@ -22,7 +22,7 @@ class CreateOrderItemsTable extends Migration
             $table->integer(precio_total_cantidad);
             $table->timestamps();
 
-            $table->foreign('orders_id')->references('id')->on('orders');
+            $table->foreign('order_id')->references('id')->on('orders');
             $table->foreign('product_id')->references('id')->on('products');
 
 

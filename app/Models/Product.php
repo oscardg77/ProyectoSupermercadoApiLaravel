@@ -5,7 +5,7 @@ namespace App\Models;
 use Illuminate\Database\Eloquent\Factories\HasFactory;
 use Illuminate\Database\Eloquent\Model;
 
-class products extends Model
+class Product extends Model
 {
     
     public function category()
@@ -14,13 +14,15 @@ class products extends Model
     }
 
      
-    public function products_offer()
+    public function offer_product()
     {
         return $this->hasOne(products_offer::class);
     }
     
-    public function order_items()
+    public function orders()
     {
-        return $this->hasMany(order_items::class);
+        return $this->belongsToMany(Order::class);
     }
+
+    
 }

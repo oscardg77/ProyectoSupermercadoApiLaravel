@@ -15,8 +15,8 @@ class CreateProductsOfferTable extends Migration
     {
         Schema::create('products_offer', function (Blueprint $table) {
             $table->id();
-            $table->integer(id_offer);
-            $table->integer(id_product);
+            $table->integer('id_offer');
+            $table->integer('id_product');
             $table->timestamps();
 
             $table->foreign('id_product')->references('id')->on('products');
