@@ -21,7 +21,7 @@ class CreateOffersTable extends Migration
             $table->timestamps();
 
             
-            $table->foreign('id_product')->references('id')->on('products_offer');
+    
         });
     }
 
