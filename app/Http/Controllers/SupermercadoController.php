@@ -9,7 +9,7 @@ use App\Models\Category;
 
 class SupermercadoController extends Controller
 {
-       public function User(){
+       public function Index(){
        
          $user = User::all();
 
@@ -42,5 +42,24 @@ class SupermercadoController extends Controller
 
       }
 
+
+      public function store(Request $request){
+
+        $datos_validados = $request->validate([
+
+          'index' => 'required',
+
+          'order' => 'required',
+
+          'product' => 'required',
+
+          'category' => 'required',
+
+   ]);
      
-}
+          }
+   }
+
+     
+     
+
