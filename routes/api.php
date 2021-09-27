@@ -5,11 +5,13 @@ use Illuminate\Support\Facades\Route;
 use App\http\Controllers\UserController;
 use App\Http\Controllers\AuthUserController;
 use App\Http\Controllers\CategoryController;
-use App\Http\Controllers\AuthCategoryController;
+/**use App\Http\Controllers\AuthCategoryController;**/
 use App\Http\Controllers\ProductController;
-use App\Http\Controllers\AuthProductController;
+/**use App\Http\Controllers\AuthProductController;**/
 use App\Http\Controllers\OrderController;
-use App\Http\Controllers\AuthOrderController;
+/**use App\Http\Controllers\AuthOrderController;*/
+use App\Http\Controllers\OfferController;
+/**use App\Http\Controllers\AuthOfferController;*/
 
 
 Route::get('user',[UserController::class, 'index']);
@@ -41,6 +43,13 @@ Route::post('/category', [CategoryController::class, 'store']);
 Route::put('/category/{id}', [CategoryController::class, 'update']);
 Route::delete('/category/{id}', [CategoryController::class, 'destroy']);
 Route::post('/category',[CategoryController::class, 'AuthCategoryController']);
+
+Route::get('offer',[OfferController::class, 'offer']);
+Route::get('/offer/{id}', [OfferController::class, 'show']);
+Route::post('/category', [OfferController::class, 'store']);
+Route::put('/category/{id}', [OfferController::class, 'update']);
+Route::delete('/category/{id}', [OfferController::class, 'destroy']);
+Route::post('/category',[OfferController::class, 'AuthCategoryController']);
 
 
 

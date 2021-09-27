@@ -5,7 +5,7 @@ namespace Database\Factories;
 use App\Models\Model;
 use Illuminate\Database\Eloquent\Factories\Factory;
 
-class SupermercadoFactory extends Factory
+class ModelFactory extends Factory
 {
     /**
      * The name of the factory's corresponding model.
@@ -22,10 +22,9 @@ class SupermercadoFactory extends Factory
     public function definition()
     {
         return [
-            'user' => $this->faker->index(),
-            'order' => $this->faker->order(),
-            'product' => $this->faker->product(),
-            'category' => $this->faker->category(),
+            'type_offer'=> $this->faker->text($maxNbChars = 200),
+            'name_offer' => $this->faker->name(),
+            'deadline' => $this->faker->date(),
         ];
     }
 }
